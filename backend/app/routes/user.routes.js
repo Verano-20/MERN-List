@@ -10,6 +10,8 @@ module.exports = function(app) {
         next();
     });
 
+    // DONT FORGET TO ADD TOKEN VERIFICATION
+
     app.get('/user/getList', controller.getList);
 
     app.post('/user/newTask', controller.newTask);
