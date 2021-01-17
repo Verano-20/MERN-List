@@ -131,7 +131,7 @@ exports.deleteTask = (req, res) => {
                     list.items.splice(i, 1);
                     break;
                 }
-                
+
                 if (i == list.items.length - 1) {
                     res.status(404).send({message: "List item not found."});
                     return;
@@ -151,5 +151,59 @@ exports.deleteTask = (req, res) => {
 };
 
 exports.completedTask = (req, res) => {
-    res.status(200).send('completedTask');
+    // request validation
+    if (!(req.body.username && req.body.listId && req.body.itemId)) {
+        res.status(400).send({message: "Invalid request."});
+        return;
+    }
+
+    // find user
+    User.findOne({
+        username: req.body.username
+    })
+    .populate('roles', '-__v')
+    .exec((err, user) => { 
+        if (err) {
+            res.status(500).send({message: err});
+            return;
+        }
+        
+        if (!user) {
+            return res.status(404).send({message: "User not found."});
+        }
+
+        // check list is in user's lists
+        if (!user.lists.includes(req.body.listId)) {
+            return res.status(403).send({message: "List does not belong to user."})
+        }
+
+        // find list
+        List.findById(req.body.listId).exec((err, list) => {
+            if (err) {
+                res.status(500).send({message: err});
+                return;
+            }
+
+            for (let i = 0; i < list.items.length; i++) {
+                if (list.items[i]._id == req.body.itemId) {
+                    list.items[i].completed = !(list.items[i].completed);
+                    break;
+                }
+                
+                if (i == list.items.length - 1) {
+                    res.status(404).send({message: "List item not found."});
+                    return;
+                }
+            }
+
+            list.save(err => {
+                if (err) {
+                    res.status(500).send({message: err});
+                    return;
+                }
+
+                res.status(200).send({message: "List item completion updated successfully."});
+            });
+        });
+    });
 }
