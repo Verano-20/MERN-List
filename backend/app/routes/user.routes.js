@@ -10,13 +10,11 @@ module.exports = function(app) {
         next();
     });
 
-    // DONT FORGET TO ADD TOKEN VERIFICATION
+    app.get('/user/getList', [authJwt.verifyToken], controller.getList);
 
-    app.get('/user/getList', controller.getList);
+    app.post('/user/newTask', [authJwt.verifyToken], controller.newTask);
 
-    app.post('/user/newTask', controller.newTask);
+    app.post('/user/deleteTask', [authJwt.verifyToken], controller.deleteTask);
 
-    app.post('/user/deleteTask', controller.deleteTask);
-
-    app.post('/user/completedTask', controller.completedTask);
+    app.post('/user/completedTask', [authJwt.verifyToken], controller.completedTask);
 };
