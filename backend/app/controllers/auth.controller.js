@@ -7,6 +7,12 @@ var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 
 exports.signUp = (req, res) => {
+    // request validation
+    if (!(req.body.username && req.body.email && req.body.password)) {
+        res.status(400).send({message: "Invalid request."});
+        return;
+    }
+
     const user = new User({
         username: req.body.username,
         email: req.body.email,
@@ -63,6 +69,12 @@ exports.signUp = (req, res) => {
 };
 
 exports.login = (req, res) => {
+    // request validation
+    if (!(req.body.username && req.body.password)) {
+        res.status(400).send({message: "Invalid request."});
+        return;
+    }
+
     User.findOne({
         username: req.body.username
     })
