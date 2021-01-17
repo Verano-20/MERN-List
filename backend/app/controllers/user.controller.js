@@ -41,7 +41,7 @@ exports.getList = (req, res) => {
 
 exports.newTask = (req, res) => {
     // request validation
-    if (!(req.body.username && req.body.listId && req.body.itemId && req.body.itemTitle)) {
+    if (!(req.body.username && req.body.listId && req.body.itemTitle)) {
         res.status(400).send({message: "Invalid request."});
         return;
     }
