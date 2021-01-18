@@ -4,15 +4,13 @@ const List = db.list;
 
 exports.getList = (req, res) => {
     // request validation
-    if (!(req.body.username && req.body.listId)) {
-        res.status(400).send({message: "Invalid requeset."});
+    if (!req.body.listId) {
+        res.status(400).send({message: "Invalid request."});
         return;
     }
 
     // find user
-    User.findOne({
-        username: req.body.username
-    })
+    User.findById(req.userId)
     .populate('roles', '-__v')
     .exec((err, user) => {
         if (err) {
@@ -41,15 +39,13 @@ exports.getList = (req, res) => {
 
 exports.newTask = (req, res) => {
     // request validation
-    if (!(req.body.username && req.body.listId && req.body.itemTitle)) {
+    if (!(req.body.listId && req.body.itemTitle)) {
         res.status(400).send({message: "Invalid request."});
         return;
     }
 
     // find user
-    User.findOne({
-        username: req.body.username
-    })
+    User.findById(req.userId)
     .populate('roles', '-__v')
     .exec((err, user) => { 
         if (err) {
@@ -94,15 +90,13 @@ exports.newTask = (req, res) => {
 
 exports.deleteTask = (req, res) => {
     // request validation
-    if (!(req.body.username && req.body.listId && req.body.itemId)) {
+    if (!(req.body.listId && req.body.itemId)) {
         res.status(400).send({message: "Invalid request."});
         return;
     }
 
     // find user
-    User.findOne({
-        username: req.body.username
-    })
+    User.findById(req.userId)
     .populate('roles', '-__v')
     .exec((err, user) => { 
         if (err) {
@@ -152,15 +146,13 @@ exports.deleteTask = (req, res) => {
 
 exports.completedTask = (req, res) => {
     // request validation
-    if (!(req.body.username && req.body.listId && req.body.itemId)) {
+    if (!(req.body.listId && req.body.itemId)) {
         res.status(400).send({message: "Invalid request."});
         return;
     }
 
     // find user
-    User.findOne({
-        username: req.body.username
-    })
+    User.findById(req.userId)
     .populate('roles', '-__v')
     .exec((err, user) => { 
         if (err) {
