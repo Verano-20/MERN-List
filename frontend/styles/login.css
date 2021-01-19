@@ -10,7 +10,7 @@ main {
 }
 #logo {
     width: 125px;
-    margin: 19px;
+    margin: 87px 0;
 }
 form {
     display: flex;
@@ -71,15 +71,14 @@ main > p:last-of-type {
 
 @media (min-width: 376px) {
     #logo {
-        margin: 55px 0 54px 0;
+        margin: 122px 0;
     }
 }
 
 @media (min-width: 768px) {
     #logo {
         width: 200px;
-        margin: 90px 0;
-
+        margin: 200px 0;
     }
     form {
         width: 534px;
@@ -108,6 +107,6 @@ main > p:last-of-type {
 
 @media (min-width: 992px) {
     #logo {
-        margin: 84px 0;
+        margin: 152px 0;
     }
 }
