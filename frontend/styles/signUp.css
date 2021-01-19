@@ -1,0 +1,114 @@
+body {
+    background-color: #6C6C6C;
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Helvetica;
+}
+#logo {
+    width: 125px;
+    margin: 19px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #707070;
+    border-radius: 5px;
+    box-shadow: 0 0 5px white;
+    width: 295px;
+}
+form > input {
+    height: 48px;
+    width: 255px;
+    margin: 20px 0 0 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #707070;
+}
+form > button {
+    height: 48px;
+    width: 175px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    background-color: #7CE33C;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    color: #707070;
+    font-size: 17px;
+}
+form > div {
+    display: flex;
+    margin: 20px 0;
+    font-size: 14px;
+}
+form > div > p {
+    margin: 0 5px 0 0;
+    color: #707070;
+}
+form > div > a {
+    color: #387DEB;
+    text-decoration: none;
+}
+
+main > p {
+    margin: 20px 0 0 0;
+    color: #C1BEBE;
+    font-size: 15px;
+}
+main > p:last-of-type {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+
+@media (min-width: 376px) {
+    #logo {
+        margin: 55px 0 54px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    #logo {
+        width: 200px;
+        margin: 90px 0;
+
+    }
+    form {
+        width: 534px;
+    }
+    form > input {
+        height: 75px;
+        width: 494px;
+        font-size: 22px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    form > button {
+        height: 75px;
+        width: 300px;
+        font-size: 26px;
+    }
+    form > div {
+        font-size: 18px;
+    }
+    main > p {
+        font-size: 20px;
+    }
+    main > p:last-of-type {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    #logo {
+        margin: 84px 0;
+    }
+}
