@@ -1,0 +1,331 @@
+body {
+    background-color: #6C6C6C;
+    margin: 0;
+    font-family: Helvetica;
+}
+
+#nav-tab {
+    z-index: 1;
+    position: absolute;
+    height: 48px;
+    width: 24px;
+    background-color: white;
+    border: 1px solid #707070;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 0 5px black;    
+    transform: translate(-1px, calc(50vh - 24px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-tab-open {
+    transform: translate(177px, calc(50vh - 24px)) !important;
+}
+#nav-tab > div {
+    height: 30px;
+    width: 3px;
+    background-color: #707070;
+    border-radius: 3px;
+}
+
+#nav-hamburger {
+    display: none;
+}
+
+nav {
+    display: none;
+    z-index: 2;
+    width: 178px;
+    height: 100vh;
+    position: fixed;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 30px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px black;
+    border-right: 1px solid #707070;
+}
+.nav-open {
+    display: flex;
+}
+nav > div {
+    text-align: center;
+}
+#logo {
+    width: 125px;
+}
+nav > div > p {
+    color: #707070;
+    font-size: 16px;
+}
+nav > div > p:last-of-type {
+    font-size: 12px;
+}
+nav > a {
+    text-decoration: none;
+    color: #387DEB;
+    font-size: 16px;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#list-wrapper {
+    width: calc(100vw - 50px);
+    max-height: calc(100% - 118px);
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+#list-wrapper::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+ul > li {
+    width: 95%;
+    min-height: 48px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px white;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 0;
+    margin: 0 0 10px 0;
+    background-color: white;
+    color: #707070;
+}
+ul > li:hover {
+    background-color: rgb(220, 220, 220);
+}
+ul > li > div {
+    width: calc(100% - 35px);
+    height: 100%;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+ul > li > div:hover {
+    text-decoration: line-through;
+}
+ul > li > div > p {
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+}
+ul > li > span {
+    width: 35px;
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+}
+ul > li > span:hover {
+    color: rgba(255, 20, 20, 0.8);
+}
+ul > li > span::after {
+    content: '\2715';
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0 30px 0;
+    width: calc(100vw - 40px);
+}
+form > input {
+    width: calc(100% - 58px);
+    height: 48px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    background-color: white;
+    border: 2px solid #7CE33C;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    margin: 0 10px 0 0;
+    font-size: 17px;
+    color: #707070;
+}
+form > button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #7CE33C;
+    border: 2px solid #707070;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+}
+#plus1, #plus2 {
+    position: fixed;
+    height: 30px;
+    border: 3px solid #707070;
+    border-radius: 3px;
+}
+#plus2 {
+    height: 0;
+    width: 30px;
+}
+footer {
+    display: none;
+}
+
+@media (min-width: 376px) {
+    .nav-tab-open {
+        transform: translate(196px, calc(50vh - 24px)) !important;
+    }
+    nav {
+        width: 197px;
+    }
+}
+
+@media (min-width: 768px) {
+    #nav-tab {
+        display: none;
+    }
+    #nav-hamburger {
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        background-color: white;
+        border-radius: 0 0 10px 0;
+        border: none;
+        box-shadow: 0 0 5px white;
+    }
+    .nav-hamburger-open {
+        transform: translateX(367px);
+        box-shadow: 0 0 5px black !important;
+        border-radius: 0 0 0 10px !important;
+    }
+    #bar1, #bar2, #bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #707070;
+        border-radius: 5px;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    .menu-icon-change #bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .menu-icon-change #bar2 {
+        opacity: 0;
+    }
+    .menu-icon-change #bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+
+    nav {
+        width: 418px;
+    }
+    #logo {
+        width: 200px;
+    }
+    nav > div > p {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    nav > div > p:last-of-type {
+        font-size: 16px;
+        margin: 0;
+    }
+    nav > a {
+        font-size: 26px;
+    }
+
+    main {
+        height: 92vh;
+        flex-direction: column-reverse;
+    }
+    #list-wrapper {
+        width: calc(100vw - 200px);
+    }
+    form {
+        margin: 75px 0 30px 0;
+        width: calc(100vw - 200px);
+        flex-direction: column;
+    }
+    form > input {
+        height: 75px;
+        width: 100%;
+        font-size: 26px;
+    }
+    form > button {
+        height: 50px;
+        width: 150px;
+        margin: 20px 0 0 0;
+        font-size: 26px;
+        color: #707070;
+        border: none;
+    }
+    form > button::after {
+        content: "Add Task";
+    }
+    #plus1, #plus2 {
+        display: none;
+    }
+
+    ul > li {
+        height: 75px;
+    }
+    ul > li > div {
+        width: calc(100% - 48px);
+    }
+    ul > li > div > p {
+        font-size: 26px;
+    }
+    ul > li > span {
+        width: 48px;
+        font-size: 42px; 
+    }
+
+    footer { 
+        height: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    footer > p {
+        font-size: 20px;
+        color: #C1BEBE;
+        margin: 0;
+    }
+    footer > p:last-of-type {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    form {
+        width: 684px;
+    }
+    #list-wrapper {
+        width: 634px;
+    }
+}
