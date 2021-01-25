@@ -41,17 +41,11 @@ $(document).ready(() => {
             success: (res) => {
                 let token = res.accessToken;
                 localStorage.setItem('token', token);
-                loadMain();
+                window.location.href = "/main";
             },
             error: (res) => {
                 console.log(res);
             }
         });
     };
-    
-    loadMain = (data) => {
-        // route to main.html
-        // to do once login.js has been finished, as method will be similar
-        console.log('load main not implemented');
-    }
 });
