@@ -46,6 +46,9 @@ app.get('/signUp', (req, res) => {
 app.get('/login', (req, res) => {
     res.sendFile(__dirname + '/frontend/templates/login.html');
 });
+app.get('/main', (req, res) => {
+    res.sendFile(__dirname + '/frontend/templates/main.html');
+});
 
 require('./app/routes/user.routes')(app);
 require('./app/routes/auth.routes')(app);
