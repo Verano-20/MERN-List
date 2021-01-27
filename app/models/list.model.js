@@ -5,9 +5,10 @@ const List = mongoose.model(
     new mongoose.Schema({
         items: [
             {
+                _id: mongoose.Schema.Types.ObjectId,
                 title: String,
                 completed: Boolean,
-                timeStamp: String // might need to be a number depending on how date is formatted
+                timeStamp: String
             }
         ]
     })
