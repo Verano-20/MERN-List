@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const db = require('../models');
 const User = db.user;
 const List = db.list;
@@ -31,7 +32,6 @@ exports.getList = (req, res) => {
                 res.status(500).send({message: err});
                 return;
             }
-
             res.status(200).send(list.items);
         });
     });
@@ -69,8 +69,10 @@ exports.newTask = (req, res) => {
                 return;
             }
 
+            let taskId = new mongoose.Types.ObjectId();
+
             list.items.push({
-                itemId: req.body.itemId,
+                _id: taskId,
                 title: req.body.itemTitle,
                 completed: false,
                 timeStamp: Date.now()
@@ -82,7 +84,10 @@ exports.newTask = (req, res) => {
                     return;
                 }
 
-                res.status(200).send({message: "List item added successfully."});
+                res.status(200).send({
+                    message: "List item added successfully.",
+                    id: taskId
+                });
             });
         });
     });

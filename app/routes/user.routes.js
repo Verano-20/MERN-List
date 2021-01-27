@@ -10,7 +10,7 @@ module.exports = function(app) {
         next();
     });
 
-    app.get('/user/getList', [authJwt.verifyToken], controller.getList);
+    app.post('/user/getList', [authJwt.verifyToken], controller.getList);
 
     app.post('/user/newTask', [authJwt.verifyToken], controller.newTask);
 

@@ -39,8 +39,7 @@ $(document).ready(() => {
             method: "POST",
             data: data,
             success: (res) => {
-                let token = res.accessToken;
-                localStorage.setItem('token', token);
+                localStorage.setItem('user', JSON.stringify(Object.entries(res)));
                 window.location.href = "/main";
             },
             error: (res) => {
