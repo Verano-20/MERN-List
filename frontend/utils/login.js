@@ -10,8 +10,8 @@ $(document).ready(() => {
                 username: $("#username").val(),
                 password: $("#password").val()
             },
-            success: (res) => {
-                console.log(res);
+            success: (res) => {          
+                localStorage.setItem('user', JSON.stringify(Object.entries(res)));
                 window.location.href = "/main";
             },
             error: (res) => {
