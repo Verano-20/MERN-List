@@ -192,6 +192,16 @@ form > button {
     height: 0px;
     width: 30px;
 }
+
+#submit-btn:active {
+    color: white;
+}
+
+#submit-btn:active > div {
+    border: 3px solid white;
+    background-color: white;
+}
+
 footer {
     display: none;
 }
