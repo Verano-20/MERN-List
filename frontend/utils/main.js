@@ -65,7 +65,13 @@ $(document).ready(() => {
                 console.log(res.message);
             }
         });
+    
+        // Keep focus on input when submitted, to keep keyboard open on mobile
+        $("#task-input").focus();
     });
+
+
+
 
     // complete task
     completedTask = (listElement) => {
