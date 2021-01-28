@@ -93,6 +93,9 @@ $(document).ready(() => {
         // Update list
         $("#" + elementId).toggleClass("li-completed");
         $("#" + elementId + " > div").toggleClass("li-div-completed");
+
+        // Reload list to ensure updated class is applied (issue on mobile)
+        $("ul").html($("ul").html());
     };
 
     // delete task
@@ -132,8 +135,8 @@ $(document).ready(() => {
 
         // Update classes
         if (completed) {
-        $("#" + id).addClass("li-completed");
-        $("#" + id + " > div").addClass("li-div-completed");
+            $("#" + id).addClass("li-completed");
+            $("#" + id + " > div").addClass("li-div-completed");
         }
     };
 });
