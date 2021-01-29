@@ -64,6 +64,7 @@ form > button {
 }
 form > button:focus {
     outline: none;
+    color: white;
 }
 form > div {
     display: flex;
