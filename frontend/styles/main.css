@@ -79,10 +79,13 @@ main {
 
 #list-wrapper {
     width: calc(100vw - 50px);
-    max-height: calc(100% - 118px);
+    height: calc(100% - 118px);
     overflow: auto;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+    border-top: 2px solid #7CE33C;
+    border-bottom: 2px solid #7CE33C;
+    border-radius: 20px;
 }
 #list-wrapper::-webkit-scrollbar {
     width: 0;
