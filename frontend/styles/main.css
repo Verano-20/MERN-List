@@ -1,3 +1,4 @@
+/* iPhone 6,7,8 */
 body {
     background-color: #6C6C6C;
     margin: 0;
@@ -71,7 +72,7 @@ nav > a {
 
 main {
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
@@ -80,6 +81,7 @@ main {
 #list-wrapper {
     width: calc(100vw - 50px);
     height: calc(100% - 118px);
+    /* 118px is the size of the form (inc margins) plus 30px margin top for the list wrapper */
     overflow: auto;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
@@ -207,17 +209,10 @@ form > button {
 
 footer {
     display: none;
+    height: 0;
 }
 
-@media (min-width: 376px) {
-    .nav-tab-open {
-        transform: translate(196px, calc(50vh - 24px)) !important;
-    }
-    nav {
-        width: 197px;
-    }
-}
-
+/* iPad */
 @media (min-width: 768px) {
     #nav-tab {
         display: none;
@@ -279,10 +274,13 @@ footer {
     }
 
     main {
-        height: 92vh;
+        /* 75px is the height of the footer */
+        height: calc(100% - 75px);
         flex-direction: column-reverse;
     }
     #list-wrapper {
+        /* 250px is the height of the form plus margins */
+        height: calc(100% - 250px);
         width: calc(100vw - 200px);
     }
     form {
@@ -325,7 +323,7 @@ footer {
     }
 
     footer { 
-        height: 8vh;
+        height: 75px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -341,6 +339,7 @@ footer {
     }
 }
 
+/* Desktop */
 @media (min-width: 992px) {
     form {
         width: 684px;

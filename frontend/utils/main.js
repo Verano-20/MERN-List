@@ -2,9 +2,9 @@
 
 $(document).ready(() => {
     // window size - important for mobile (virtual keyboard)
-    $("main").height(window.innerHeight);
+    $("main").height(window.innerHeight - $("footer").height());
     $(window).resize(() => {
-        $("main").height(window.innerHeight);
+        $("main").height(window.innerHeight - $("footer").height());
     })
 
     // nav
