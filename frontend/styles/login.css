@@ -1,3 +1,4 @@
+/* iPhone 6,7,8 */
 body {
     background-color: #6C6C6C;
     margin: 0;
@@ -20,11 +21,12 @@ form {
     border: 2px solid #707070;
     border-radius: 5px;
     box-shadow: 0 0 5px white;
-    width: 295px;
+    width: 80%;
+    max-width: 500px;
 }
 form > input {
     height: 48px;
-    width: 255px;
+    width: 90%;
     margin: 20px 0 0 0;
     border: none;
     border-radius: 5px;
@@ -36,7 +38,7 @@ form > input {
 }
 form > button {
     height: 48px;
-    width: 175px;
+    width: 50%;
     margin: 20px 0 0 0;
     padding: 0;
     background-color: #7CE33C;
@@ -69,29 +71,22 @@ main > p:last-of-type {
     font-size: 14px;
 }
 
-@media (min-width: 376px) {
-    #logo {
-        margin: 122px 0;
-    }
-}
-
+/* iPad */
 @media (min-width: 768px) {
     #logo {
         width: 200px;
         margin: 200px 0;
     }
     form {
-        width: 534px;
+        width: 60%;
     }
     form > input {
         height: 75px;
-        width: 494px;
         font-size: 22px;
         padding: 0 20px;
     }
     form > button {
         height: 75px;
-        width: 300px;
         font-size: 26px;
     }
     form > div {
@@ -105,6 +100,7 @@ main > p:last-of-type {
     }
 }
 
+/* Desktop */
 @media (min-width: 992px) {
     #logo {
         margin: 152px 0;
