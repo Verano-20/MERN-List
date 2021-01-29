@@ -122,10 +122,10 @@ $(document).ready(() => {
                 itemId: elementId
             },
             success: (res) => {
-                console.log(res);
+                console.log(res.message);
             },
             error: (res) => {
-                console.log(res);
+                console.log(res.responseJSON.message);
             }
         });
 
