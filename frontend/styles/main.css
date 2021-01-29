@@ -18,6 +18,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    -moz-transition:all 200ms linear;
+    -webkit-transition:all 200ms linear;
+    -o-transition:all 200ms linear;
+    transition:all 200ms linear;
 }
 .nav-tab-open {
     transform: translate(177px, calc(50vh - 24px)) !important;
@@ -34,7 +38,8 @@ body {
 }
 
 nav {
-    display: none;
+    display: flex;
+    transform: translateX(-178px);
     z-index: 2;
     width: 178px;
     height: 100%;
@@ -45,11 +50,16 @@ nav {
     justify-content: space-between;
     padding: 10px 10px 30px 10px;
     box-sizing: border-box;
-    box-shadow: 0 0 5px black;
+    box-shadow: none;
     border-right: 1px solid #707070;
+    -moz-transition:all 200ms linear;
+    -webkit-transition:all 200ms linear;
+    -o-transition:all 200ms linear;
+    transition:all 200ms linear;
 }
 .nav-open {
-    display: flex;
+    box-shadow: 0 0 5px black;
+    transform: translateX(0)
 }
 nav > div {
     text-align: center;
@@ -235,6 +245,10 @@ footer {
         border-radius: 0 0 10px 0;
         border: none;
         box-shadow: 0 0 5px white;
+        -moz-transition:all 200ms linear;
+        -webkit-transition:all 200ms linear;
+        -o-transition:all 200ms linear;
+        transition:all 200ms linear;
     }
     .nav-hamburger-open {
         transform: translateX(367px);
@@ -262,6 +276,7 @@ footer {
     }
 
     nav {
+        transform: translateX(-428px);
         width: 418px;
     }
     #logo {
