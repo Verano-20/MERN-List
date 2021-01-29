@@ -48,7 +48,8 @@ form > input {
     transition-duration: 200ms;
 }
 form > input:focus {
-    outline: none !important;
+    outline: none;
+    box-shadow: 0 0 5px orange;
 }
 
 form > button {
@@ -62,6 +63,10 @@ form > button {
     box-shadow: 0 0 5px black;
     color: #707070;
     font-size: 17px;
+}
+form > button:focus {
+    outline: none;
+    color: white;
 }
 form > div {
     display: flex;
