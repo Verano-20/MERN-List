@@ -1,4 +1,9 @@
 $(document).ready(() => {
+    // window size - important for mobile (virtual keyboard)
+    $("main").height(window.innerHeight);
+    $(window).resize(() => {
+        $("main").height(window.innerHeight);
+    });
 
     $("form").on("submit", (e) => {
         e.preventDefault();

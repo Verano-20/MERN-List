@@ -5,7 +5,7 @@ $(document).ready(() => {
     $("main").height(window.innerHeight - $("footer").height());
     $(window).resize(() => {
         $("main").height(window.innerHeight - $("footer").height());
-    })
+    });
 
     // nav
     $("#nav-tab").add($("#nav-hamburger")).click(() => {
