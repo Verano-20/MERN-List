@@ -1,6 +1,11 @@
 //const { list } = require("../../app/models");
 
 $(document).ready(() => {
+    // window size - important for mobile (virtual keyboard)
+    $("main").height(window.innerHeight - $("footer").height());
+    $(window).resize(() => {
+        $("main").height(window.innerHeight - $("footer").height());
+    });
 
     // nav
     $("#nav-tab").add($("#nav-hamburger")).click(() => {
@@ -38,7 +43,7 @@ $(document).ready(() => {
             console.log(res.responseJSON.message);
         }
     });
-    
+
     // new task
     $("form").on('submit', (e) => {
         e.preventDefault();
@@ -65,6 +70,9 @@ $(document).ready(() => {
                 console.log(res.message);
             }
         });
+    
+        // Keep focus on input when submitted, to keep keyboard open on mobile
+        $("#task-input").focus();
     });
 
     // complete task
@@ -93,6 +101,9 @@ $(document).ready(() => {
         // Update list
         $("#" + elementId).toggleClass("li-completed");
         $("#" + elementId + " > div").toggleClass("li-div-completed");
+
+        // Reload list to ensure updated class is applied (issue on mobile)
+        $("ul").html($("ul").html());
     };
 
     // delete task
@@ -111,17 +122,16 @@ $(document).ready(() => {
                 itemId: elementId
             },
             success: (res) => {
-                console.log(res);
+                console.log(res.message);
             },
             error: (res) => {
-                console.log(res);
+                console.log(res.responseJSON.message);
             }
         });
 
         // Update list
         $("#" + elementId).remove();
     };
-
 
     newListItem = (content, id, completed = false) => {
         // Create list item
@@ -132,8 +142,8 @@ $(document).ready(() => {
 
         // Update classes
         if (completed) {
-        $("#" + id).addClass("li-completed");
-        $("#" + id + " > div").addClass("li-div-completed");
+            $("#" + id).addClass("li-completed");
+            $("#" + id + " > div").addClass("li-div-completed");
         }
     };
 });

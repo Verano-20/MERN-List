@@ -1,3 +1,4 @@
+/* iPhone 6,7,8 */
 body {
     background-color: #6C6C6C;
     margin: 0;
@@ -17,6 +18,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    -moz-transition:all 200ms linear;
+    -webkit-transition:all 200ms linear;
+    -o-transition:all 200ms linear;
+    transition:all 200ms linear;
 }
 .nav-tab-open {
     transform: translate(177px, calc(50vh - 24px)) !important;
@@ -33,10 +38,11 @@ body {
 }
 
 nav {
-    display: none;
+    display: flex;
+    transform: translateX(-178px);
     z-index: 2;
     width: 178px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     background-color: white;
     flex-direction: column;
@@ -44,11 +50,16 @@ nav {
     justify-content: space-between;
     padding: 10px 10px 30px 10px;
     box-sizing: border-box;
-    box-shadow: 0 0 5px black;
+    box-shadow: none;
     border-right: 1px solid #707070;
+    -moz-transition:all 200ms linear;
+    -webkit-transition:all 200ms linear;
+    -o-transition:all 200ms linear;
+    transition:all 200ms linear;
 }
 .nav-open {
-    display: flex;
+    box-shadow: 0 0 5px black;
+    transform: translateX(0)
 }
 nav > div {
     text-align: center;
@@ -71,7 +82,7 @@ nav > a {
 
 main {
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
@@ -79,10 +90,14 @@ main {
 
 #list-wrapper {
     width: calc(100vw - 50px);
-    max-height: calc(100% - 118px);
+    height: calc(100% - 118px);
+    /* 118px is the size of the form (inc margins) plus 30px margin top for the list wrapper */
     overflow: auto;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+    border-top: 2px solid #7CE33C;
+    border-bottom: 2px solid #7CE33C;
+    border-radius: 20px;
 }
 #list-wrapper::-webkit-scrollbar {
     width: 0;
@@ -168,6 +183,9 @@ form > input {
     font-size: 17px;
     color: #707070;
 }
+form > input:focus {
+    outline: none;
+}
 form > button {
     width: 48px;
     height: 48px;
@@ -180,29 +198,37 @@ form > button {
     border-radius: 5px;
     box-shadow: 0 0 5px black;
 }
+form > button:focus {
+    outline: none;
+}
 #plus1, #plus2 {
-    position: fixed;
+    position: absolute;
+    background-color: #707070;
     height: 30px;
+    width: 0px;
     border: 3px solid #707070;
     border-radius: 3px;
 }
 #plus2 {
-    height: 0;
+    height: 0px;
     width: 30px;
 }
+
+#submit-btn:active {
+    color: white;
+}
+
+#submit-btn:active > div {
+    border: 3px solid white;
+    background-color: white;
+}
+
 footer {
     display: none;
+    height: 0;
 }
 
-@media (min-width: 376px) {
-    .nav-tab-open {
-        transform: translate(196px, calc(50vh - 24px)) !important;
-    }
-    nav {
-        width: 197px;
-    }
-}
-
+/* iPad */
 @media (min-width: 768px) {
     #nav-tab {
         display: none;
@@ -219,6 +245,10 @@ footer {
         border-radius: 0 0 10px 0;
         border: none;
         box-shadow: 0 0 5px white;
+        -moz-transition:all 200ms linear;
+        -webkit-transition:all 200ms linear;
+        -o-transition:all 200ms linear;
+        transition:all 200ms linear;
     }
     .nav-hamburger-open {
         transform: translateX(367px);
@@ -246,6 +276,7 @@ footer {
     }
 
     nav {
+        transform: translateX(-428px);
         width: 418px;
     }
     #logo {
@@ -264,10 +295,13 @@ footer {
     }
 
     main {
-        height: 92vh;
+        /* 75px is the height of the footer */
+        height: calc(100% - 75px);
         flex-direction: column-reverse;
     }
     #list-wrapper {
+        /* 250px is the height of the form plus margins */
+        height: calc(100% - 250px);
         width: calc(100vw - 200px);
     }
     form {
@@ -310,7 +344,7 @@ footer {
     }
 
     footer { 
-        height: 8vh;
+        height: 75px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -326,6 +360,7 @@ footer {
     }
 }
 
+/* Desktop */
 @media (min-width: 992px) {
     form {
         width: 684px;

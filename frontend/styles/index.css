@@ -1,16 +1,24 @@
+/* iPhone 6,7,8 */
 body {
     background-color: #6C6C6C;
     margin: 0;
 }
 main {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Helvetica;
 }
+#logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50%;
+}
 #logo {
-    width: 250px;
-    margin: 51px 0 0 0;
+    height: 70%;
 }
 p {
     margin: 10px 0 0 0;
@@ -22,6 +30,13 @@ p {
 p:last-of-type {
     font-size: 15px;
     margin: 0;
+}
+#button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
 }
 a {
     display: flex;
@@ -36,7 +51,6 @@ a {
     color: #585656;
 }
 #signUp {
-    margin: 45px 0 0 0;
     border: 2px solid #7CE33C;
     background-color: white;
 }
@@ -46,20 +60,8 @@ a {
     background-color: #7CE33C;
 }
 
-
-@media (min-width: 376px) {
-    #logo {
-        margin: 53px 0 0 0;
-    }
-    #signUp {
-        margin: 112px 0 0 0;
-    }
-}
-
+/* iPad & Desktop */
 @media (min-width: 768px) {
-    #logo {
-        width: 300px;
-    }
     p {
         font-size: 20px;
         height: 30px;
@@ -68,23 +70,8 @@ a {
         font-size: 16px;
     }
     a {
-        height: 96px;
+        height: 75px;
         width: 300px;
         font-size: 26px;
-    }
-    #signUp {
-        margin: 274px 0 0 0;
-    }
-    #login {
-        margin: 48px 0 0 0;
-    }
-}
-
-@media (min-width: 992px) {
-    #logo {
-        margin: 200px 0 0 0;
-    }
-    #signUp {
-        margin: 60px 0 0 0;
     }
 }
