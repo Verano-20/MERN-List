@@ -1,3 +1,4 @@
+/* iPhone 6,7,8 */
 body {
     background-color: #6C6C6C;
     margin: 0;
@@ -7,10 +8,20 @@ main {
     flex-direction: column;
     align-items: center;
     font-family: Helvetica;
+    -moz-transition:all 100ms linear;
+    -webkit-transition:all 100ms linear;
+    -o-transition:all 100ms linear;
+    transition:all 100ms linear;
+}
+#logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    min-height: 75px;
 }
 #logo {
-    width: 125px;
-    margin: 19px;
+    height: 60%;
 }
 form {
     display: flex;
@@ -74,18 +85,8 @@ main > p:last-of-type {
     font-size: 14px;
 }
 
-@media (min-width: 376px) {
-    #logo {
-        margin: 55px 0 54px 0;
-    }
-}
-
+/* iPad & Desktop */
 @media (min-width: 768px) {
-    #logo {
-        width: 200px;
-        margin: 90px 0;
-
-    }
     form {
         width: 534px;
     }
@@ -108,11 +109,5 @@ main > p:last-of-type {
     }
     main > p:last-of-type {
         font-size: 16px;
-    }
-}
-
-@media (min-width: 992px) {
-    #logo {
-        margin: 84px 0;
     }
 }

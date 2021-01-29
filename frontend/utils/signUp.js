@@ -1,4 +1,10 @@
 $(document).ready(() => {
+    // window size - important for mobile (virtual keyboard)
+    $("main").height(window.innerHeight);
+    $(window).resize(() => {
+        $("main").height(window.innerHeight);
+    });
+
     // Password validation
     let password = $("#password");
     let confirmPassword = $("#confirmPassword");
