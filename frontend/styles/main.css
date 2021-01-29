@@ -36,7 +36,7 @@ nav {
     display: none;
     z-index: 2;
     width: 178px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     background-color: white;
     flex-direction: column;

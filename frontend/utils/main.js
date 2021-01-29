@@ -1,6 +1,11 @@
 //const { list } = require("../../app/models");
 
 $(document).ready(() => {
+    // window size - important for mobile (virtual keyboard)
+    $("main").height(window.innerHeight);
+    $(window).resize(() => {
+        $("main").height(window.innerHeight);
+    })
 
     // nav
     $("#nav-tab").add($("#nav-hamburger")).click(() => {
@@ -38,7 +43,7 @@ $(document).ready(() => {
             console.log(res.responseJSON.message);
         }
     });
-    
+
     // new task
     $("form").on('submit', (e) => {
         e.preventDefault();
@@ -69,9 +74,6 @@ $(document).ready(() => {
         // Keep focus on input when submitted, to keep keyboard open on mobile
         $("#task-input").focus();
     });
-
-
-
 
     // complete task
     completedTask = (listElement) => {
@@ -130,7 +132,6 @@ $(document).ready(() => {
         // Update list
         $("#" + elementId).remove();
     };
-
 
     newListItem = (content, id, completed = false) => {
         // Create list item
