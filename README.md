@@ -1,10 +1,12 @@
-# This is my first full-stack web application; a To-Do List.
+# To-Do List  
+### http://samdawson.herokuapp.com/
 
-## MERN Stack; MongoDB, Express.js, (React.js), Node.js.  
-## User Authentication with JWT.
-### Note: The current version of the app does not use React.js, and instead the frontend is built using vanilla HTML5, CSS3 and Javascript with jQuery. A React version is currently in development and will be deployed once complete.
+## Details  
+* MERN Stack: MongoDB, Express.js, (React.js), Node.js.  
+* User Authentication with JWT.  
+* Note: The current version of the app does not use React.js, and instead the frontend is built using vanilla HTML5, CSS3 and Javascript with jQuery. A React version is currently in development and will be deployed once complete.
 
-## Usage
+## Usage
 Due to the nature of this app being hosted on 'free-tier' packages, I would not recommend using any real details with the app. A real email address is not required, and the passwords are encrypted, but there is no SSL certificate, and the database lacks some security features. Feel free to sign up using any username, password, and email, but know that you don't need to use any real details. 'example@user.com' for instance would be a valid email (provided it has not been taken).  
 The function of the app is limited to signup/login, logout, adding tasks, completing tasks, and deleting tasks.
 
@@ -20,7 +22,7 @@ The frontend of this web app was designed using AdobeXD. As a developer, I am mu
 The API was also designed pre-development, which helped maintain my understanding of how the frontend and backend should work and interact. This was adjusted slightly as problems arose during development, but was mostly completed at the design stage.
 
 ## Backend Development and Authentication
-The backend of this project is based around user authentication with JSON Web Token. The decision to use JWT was not a statment on whether it is better than session-based, but simply an exploration of this method. As mentioned, I used a tutorial to help setup this system, and then integrated my own backend and API to work with it. Using this core as a solid platform to build on helped immensely with organising the structure of the app, and separating various dependancies into their own locations and files. Having separate files for configs, controllers, middleware, models, and routes made it much easier to make changes to the app easily and was very useful for debugging. While it appeared intimidating at first, I now fully appreciate the benefits of this structure.
+The backend of this project is based around user authentication with JSON Web Token. The decision to use JWT was not a statment on whether it is better than session-based, but simply an exploration of this method. As mentioned, I used a tutorial to help setup this system, and then integrated my own backend and API to work with it. Using this core as a solid platform to build on helped immensely with organising the structure of the app, and separating various dependancies into their own locations and files. Having separate files for configs, controllers, middleware, models, and routes made it much easier to make changes to the app and was very useful for debugging. While it appeared intimidating at first, I now fully appreciate the benefits of this structure.
 
 ## Frontend Development
 The frontend of this project is not currently built in React, and a React version is in development. Instead, this has first been built with vanilla HTML5, CSS3 and JS with jQuery. As mentioned, having a clear design to follow made this development much easier, as I could focus purely on the development and not have to make any major design decisions at the same time. Minor changes have been made from the original design, whether for technical reasons or because the design didn't work as well in practice.  
@@ -33,3 +35,4 @@ The frontend was tested in Chrome using the dev tools to check the function on d
 
 ## Deployment and Hosting
 To deploy this website I used Heroku to host the Node.js app, and connected it to a MongoDB Atlas cloud based database. Due to the nature of the 'free-tier' hosting from these providers, the security of the app is not particularly strong. Passwords are encrypted using bcrypt.js, but there is no SSL certifcate. For this reason I would not recommend using any real details when testing this app!
+
